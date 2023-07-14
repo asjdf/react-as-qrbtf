@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         libraryTarget: 'umd',
-        library: 'react-qrbtf',
+        library: 'react-as-qrbtf',
         umdNamedDefine: true
     },
     resolve: {
@@ -19,15 +19,13 @@ module.exports = {
     ],
     optimization: {
         minimizer: [
-            new UglifyJsPlugin({
-                test: /\.js$/,
-            }),
+            new TerserWebpackPlugin(),
         ]
     },
     module: {
         rules: [{
             test: /\.tsx?$/,
-            use: 'awesome-typescript-loader',
+            use: 'ts-loader',
             exclude: /node_modules/,
         }]
     },

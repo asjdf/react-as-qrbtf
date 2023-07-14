@@ -16,7 +16,7 @@
 ### Installation & Usage
 
 ```sh
-npm install react-qrbtf --save
+npm install react-as-qrbtf --save
 ```
 
 ### Docs
@@ -27,7 +27,7 @@ npm install react-qrbtf --save
 
 ```js
 import React from 'react'
-import { QRNormal } from 'react-qrbtf'
+import { QRNormal } from 'react-as-qrbtf'
 
 class Component extends React.Component {
 
