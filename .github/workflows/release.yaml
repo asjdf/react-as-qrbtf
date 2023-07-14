@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Source checkout
         uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - name: install dependencies
+        run: yarn
       - name: Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v3
